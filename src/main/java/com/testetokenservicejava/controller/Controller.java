@@ -3,10 +3,9 @@ package com.testetokenservicejava.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
@@ -45,8 +44,8 @@ public class Controller {
     public String[] returnCsv () throws IOException {
 
         String[] strings;
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\rodrigo.pinheiro" +
-                "\\IdeaProjects\\TesteTokenServiceJava\\src\\main\\resources\\cadastro.csv"))) { //your file
+        Reader reader = Files.newBufferedReader(Paths.get("cadastro.csv"));
+        try (BufferedReader br = new BufferedReader(reader)) {
 
             strings= arrayService.readCSVFields(br);
 
