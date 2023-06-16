@@ -10,3 +10,5 @@ as argument to the method.
 3. Same as (2), but the argument must be a java.util.List
 4. Given a CSV (Comma-separated values) file passed as a java.io.BufferedReader, returns an array of String 
 corresponding to values of the fields;
+
+para o exercicio 4 é necessario para o proprio caminho do arquivo na sua maquina :)
